@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Playmat Autofill",
+  "version": "1.1.0",
+  "description": "Autofills the Play System playmat reservation form with the details you save, so you only complete the captcha.",
+  "permissions": ["storage"],
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Playmat Autofill",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png" }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.play-system.eu/playmat*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

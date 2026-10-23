@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Playmat Autofill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/48.png" alt="">
+    <div><h1>Playmat Autofill</h1></div>
+    <span id="msg">Salvato ✓</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Automazioni</h2>
+      <div class="row">
+        <div><b>Autofill</b><small>Compila il modulo quando è disponibile</small></div>
+        <label class="switch"><input id="autoFill" type="checkbox"><span></span></label>
+      </div>
+      <div class="row">
+        <div><b>Auto-refresh</b><small>Ricarica finché si apre la finestra, poi si spegne</small></div>
+        <label class="switch"><input id="autoReload" type="checkbox"><span></span></label>
+      </div>
+      <div class="row">
+        <div><b>Invio automatico</b><small>Conferma appena il captcha è risolto</small></div>
+        <label class="switch"><input id="autoSubmit" type="checkbox"><span></span></label>
+      </div>
+      <div class="row">
+        <div><b>Accetta condizioni</b><small>Spunta privacy e condizioni</small></div>
+        <label class="switch"><input id="accept" type="checkbox"><span></span></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>I tuoi dati</h2>
+      <div class="grid">
+        <div class="field"><label for="firstName">Nome</label><input id="firstName" type="text" autocomplete="off"></div>
+        <div class="field"><label for="lastName">Cognome</label><input id="lastName" type="text" autocomplete="off"></div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="off"></div>
+      <div class="field"><label for="birthDate">Data di nascita</label><input id="birthDate" type="date"></div>
+    </section>
+
+    <section class="card">
+      <h2>Opzioni</h2>
+      <div class="field"><label for="windowMatch">Finestra preferita (vuoto = prima disponibile)</label>
+        <input id="windowMatch" type="text" placeholder="es. 23 ottobre 12:00"></div>
+      <div class="field"><label for="reloadMs">Intervallo refresh (ms)</label>
+        <input id="reloadMs" type="number" min="500" step="100"></div>
+    </section>
+  </main>
+
+  <footer>
+    <button id="save">Salva</button>
+    <button id="open">Apri sito ↗</button>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
